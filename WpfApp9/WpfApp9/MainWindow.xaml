@@ -1,0 +1,102 @@
+﻿<Window x:Class="WpfApp9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp9" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <xctk:IntegerUpDown
+            x:Name="nuSemaphore"
+             ValueChanged="nuSemaphore_ValueChanged"
+             VerticalAlignment="Center"
+             Value="1"
+             Width="100"
+             FontSize="16"
+             Padding="0,0,60,0"
+             Margin="0,0,640,-270"/>
+        
+        <Button
+            Height="40"
+            Width="100"
+            Margin="0,0,-500,-200"
+            Content="Create"
+            Name="btn_create"
+            FontSize="18"
+            Background="LightCyan" Click="btn_create_Click">
+            
+        </Button>
+       
+        <Label
+            Content="Places in Semaphore"
+            Height="40"
+            Width="180"
+            FontSize="18"
+            Margin="0,0,580,-200">
+
+        </Label>
+        <Label
+            Content="Working Threads"
+            Height="40"
+            Width="150"
+            FontSize="18"
+            Margin="0,0,600,320">
+            
+        </Label>
+        <Label
+            Content="Waiting Threads"
+            Height="40"
+            Width="150"
+            FontSize="18"
+            Margin="0,0,50,320">
+
+        </Label>
+        <Label
+            Content="Created Threads"
+            Height="40"
+            Width="150"
+            FontSize="18"
+            Margin="0,0,-500,320">
+
+        </Label>
+
+        <ListBox
+            Height="200"
+            Width="150"
+            Margin="0,0,600,100"
+            Name="listbox_working">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" FontSize="16"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox
+            Height="200"
+            Width="150"
+            Margin="0,0,50,100"
+            Name="listbox_waiting">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" FontSize="16"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox
+            Height="200"
+            Width="150"
+            Margin="0,0,-500,100"
+            Name="listbox_created"
+            MouseDoubleClick="listbox_created_MouseDoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" FontSize="16"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>
